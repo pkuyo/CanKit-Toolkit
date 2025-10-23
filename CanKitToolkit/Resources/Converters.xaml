@@ -1,0 +1,6 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:CanKitToolkit.Converters">
+    <converters:BitrateConverter x:Key="BitrateConverter"/>
+    <converters:InverseBooleanToVisibilityConverter x:Key="InverseBoolToVis"/>
+</ResourceDictionary>

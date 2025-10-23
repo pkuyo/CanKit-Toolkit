@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <TargetFrameworks>net8.0-windows</TargetFrameworks>
+    <RootNamespace>CanKitToolkit</RootNamespace>
+    <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
+    <Configurations>Debug;Release</Configurations>
+    <Platforms>AnyCPU;X86;X64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\icon.ico" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+	<PackageReference Include="CanKit.Adapter.Kvaser" Version="0.3.3.1" />
+	<PackageReference Include="CanKit.Adapter.PCAN" Version="0.3.3.1" />
+	<PackageReference Include="CanKit.Adapter.ZLG" Version="0.3.3.1" />
+	<PackageReference Include="CanKit.Core" Version="0.3.3.1" />
+    <PackageReference Include="MaterialDesignInXamlToolkitAddOns" Version="0.0.63" />
+  </ItemGroup>
+
+
+</Project>
