@@ -1,8 +1,8 @@
-# CanKitToolKit
+# CanKit ToolKit
 
 WPF desktop sample for CanKit that discovers endpoints, inspects device capabilities, listens to CAN traffic (Classical and FD), sends single frames, applies filters, and schedules periodic transmissions.
 
-![Preview](https://github.com/pkuyo/CanKit/blob/master/docs/pics/cankitdemo_preview1.png)
+![Preview](https://github.com/pkuyo/CanKit-Toolkit/blob/master/docs/pics/cankitdemo_preview1.png)
 
 Built on [CanKit.Core](https://github.com/pkuyo/CanKit) with adapters for Kvaser, PCAN, ZLG. 
 Target framework is `net8.0-windows`.
@@ -60,18 +60,18 @@ Notes
 - Press OK to open the bus; logs show status and the frame grid starts updating.
 - Click Stop to close the connection.
 
-![Connection Options](https://github.com/pkuyo/CanKitToolkit/blob/master/docs/pics/cankitdemo_preview4.png)
+![Connection Options](https://github.com/pkuyo/CanKit-Toolkit/blob/master/docs/pics/cankitdemo_preview4.png)
 
-![SetFilter](https://github.com/pkuyo/CanKitToolkit/blob/master/docs/pics/cankitdemo_preview2.png)
+![SetFilter](https://github.com/pkuyo/CanKit-Toolkit/blob/master/docs/pics/cankitdemo_preview2.png)
 
 4) Send frames
-- Click “Send...” to open the single-frame dialog (Classic/FD, Std/Ext, DLC, data, RTR/BRS). Tx frames also appear in the grid with direction = Tx.
+- Click “Send...�? to open the single-frame dialog (Classic/FD, Std/Ext, DLC, data, RTR/BRS). Tx frames also appear in the grid with direction = Tx.
 
 5) Periodic transmissions
-- Click “Periodic...” to build a list of periodic frames (per-item enable, DLC, RTR/BRS, period ms). Click Run/Stop to control the group.
+- Click “Periodic...�? to build a list of periodic frames (per-item enable, DLC, RTR/BRS, period ms). Click Run/Stop to control the group.
 - Hardware periodic TX is used when available; otherwise the app uses software periodic TX.
 
-![Periodic](https://github.com/pkuyo/CanKitToolkit/blob/master/docs/pics/cankitdemo_preview3.png)
+![Periodic](https://github.com/pkuyo/CanKit-Toolkit/blob/master/docs/pics/cankitdemo_preview3.png)
 
 Tips
 - Right‑click a frame row to copy a text representation to the clipboard.

@@ -1,8 +1,8 @@
-# CanKitToolKit
+# CanKit ToolKit
 
 基于 WPF 的 [CanKit](https://gitee.com/pkuyora/CanKit) 示例程序：支持端点发现、能力嗅探、CAN（2.0/FD）监听、单帧发送、过滤规则和周期发送等功能。目标框架为 `net8.0-windows`。
 
-![预览](https://gitee.com/pkuyora/CanKitToolkit/raw/master/docs/pics/cankitdemo_preview1.png)
+![预览](https://gitee.com/pkuyora/CanKit-Toolkit/raw/master/docs/pics/cankitdemo_preview1.png)
 
 ## 功能
 
@@ -55,8 +55,8 @@
 - 确认后打开总线；日志区域显示状态，右侧帧表开始更新。
 - 点击 Stop 停止监听并关闭连接。
 
-!![开始监听](https://gitee.com/pkuyora/CanKitToolkit/raw/master/docs/pics/cankitdemo_preview4.png)
-![设置过滤](https://gitee.com/pkuyora/CanKitToolkit/raw/master/docs/pics/cankitdemo_preview2.png)
+!![开始监听](https://gitee.com/pkuyora/CanKit-Toolkit/raw/master/docs/pics/cankitdemo_preview4.png)
+![设置过滤](https://gitee.com/pkuyora/CanKit-Toolkit/raw/master/docs/pics/cankitdemo_preview2.png)
 
 4）发送帧
 - 点击 “Send...” 打开单帧发送窗口（经典/FD、标准/扩展、DLC、数据、RTR/BRS）。发送的 Tx 帧也会在表格中记录（方向为 Tx）。
@@ -65,7 +65,7 @@
 - 点击 “Periodic...” 构建周期发送列表（按项启用、DLC、RTR/BRS、周期 ms）。点击 Run/Stop 运行或停止所有启用项。
 - 若硬件支持将优先使用硬件周期发送，否则自动使用软件周期发送。
 
-![设置周期发送](https://gitee.com/pkuyora/CanKitToolkit/raw/master/docs/pics/cankitdemo_preview3.png)
+![设置周期发送](https://gitee.com/pkuyora/CanKit-Toolkit/raw/master/docs/pics/cankitdemo_preview3.png)
 
 提示
 - 右键帧行可复制文本到剪贴板。
