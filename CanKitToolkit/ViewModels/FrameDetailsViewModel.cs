@@ -1,5 +1,7 @@
 using System.Threading.Channels;
 using System.Windows.Threading;
+using CanKit.Abstractions.API.Can.Definitions;
+using CanKit.Abstractions.API.Common.Definitions;
 using CanKit.Core.Definitions;
 using CanKitToolkit.Models;
 using CanKitToolkit.Resources;
@@ -52,7 +54,7 @@ namespace CanKitToolkit.ViewModels
 
         private void OnFrame(CanReceiveData rec, FrameDirection dir)
         {
-            ICanFrame f = rec.CanFrame;
+            CanFrame f = rec.CanFrame;
             var key = f.IsExtendedFrame ? $"0x{f.ID:X8}" : $"0x{f.ID:X3}";
             if (!string.Equals(key, _idKey, StringComparison.OrdinalIgnoreCase))
                 return;

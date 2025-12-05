@@ -1,3 +1,5 @@
+using CanKit.Abstractions.API.Can.Definitions;
+using CanKit.Abstractions.API.Common.Definitions;
 using CanKit.Core.Definitions;
 using CanKitToolkit.Models;
 
@@ -25,13 +27,13 @@ namespace CanKitToolkit.Services
         /// Transmit a single CAN frame on the currently opened bus.
         /// Returns number of frames accepted by the driver (0 if not sent).
         /// </summary>
-        int Transmit(ICanFrame frame);
+        int Transmit(CanFrame frame);
 
         /// <summary>
         /// Start periodic transmissions for the provided frames and periods.
         /// Existing periodic tasks are stopped before starting new ones.
         /// </summary>
-        void StartPeriodic(IEnumerable<(ICanFrame frame, TimeSpan period)> items);
+        void StartPeriodic(IEnumerable<(CanFrame frame, TimeSpan period)> items);
 
         /// <summary>
         /// Stop all periodic transmissions started via StartPeriodic.

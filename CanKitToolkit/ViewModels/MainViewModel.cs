@@ -2,6 +2,7 @@ using System.Collections.ObjectModel;
 using System.Threading.Channels;
 using System.Windows;
 using System.Windows.Threading;
+using CanKit.Abstractions.API.Common.Definitions;
 using CanKit.Core.Definitions;
 using CanKitToolkit.Models;
 using CanKitToolkit.Services;

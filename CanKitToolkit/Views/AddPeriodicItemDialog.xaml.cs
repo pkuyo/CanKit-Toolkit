@@ -1,6 +1,7 @@
 using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Windows;
+using CanKit.Abstractions.API.Can.Definitions;
 using CanKit.Core.Definitions;
 using CanKitToolkit.Models;
 
@@ -108,7 +109,7 @@ namespace CanKitToolkit.Views
                 if (isFd)
                 {
                     if (dlc > 15) { MessageBox.Show(this, "FD DLC must be 0..15.", "Validation", MessageBoxButton.OK, MessageBoxImage.Warning); return; }
-                    var targetLen = CanFdFrame.DlcToLen((byte)dlc);
+                    var targetLen = CanFrame.DlcToLen((byte)dlc);
                     if (bytes.Length > targetLen)
                     {
                         MessageBox.Show(this, $"DATA length ({bytes.Length}) exceeds FD DLC length ({targetLen}).", "Validation", MessageBoxButton.OK, MessageBoxImage.Warning);

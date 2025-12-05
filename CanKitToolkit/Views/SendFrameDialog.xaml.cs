@@ -2,6 +2,7 @@ using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
+using CanKit.Abstractions.API.Can.Definitions;
 using CanKit.Core.Definitions;
 
 namespace CanKitToolkit.Views
@@ -10,7 +11,7 @@ namespace CanKitToolkit.Views
     {
         public bool AllowFd { get; set; }
 
-        public Func<ICanFrame, int>? Transmit { get; set; }
+        public Func<CanFrame, int>? Transmit { get; set; }
 
         public SendFrameDialog()
         {
@@ -107,7 +108,7 @@ namespace CanKitToolkit.Views
                 {
                     // Map DLC to length for FD
                     if (dlc > 15) { MessageBox.Show(this, "FD DLC must be 0..15.", "Validation", MessageBoxButton.OK, MessageBoxImage.Warning); return; }
-                    var targetLen = CanFdFrame.DlcToLen((byte)dlc);
+                    var targetLen = CanFrame.DlcToLen((byte)dlc);
                     if (bytes.Length > targetLen)
                     {
                         MessageBox.Show(this, $"DATA length ({bytes.Length}) exceeds FD DLC length ({targetLen}).", "Validation", MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -118,7 +119,7 @@ namespace CanKitToolkit.Views
                         Array.Resize(ref bytes, targetLen); // pad zeros
                     }
                     var brs = BrsCheck?.IsChecked == true;
-                    var frame = new CanFdFrame(id, bytes, isExtendedFrame: isExtended, BRS: brs, ESI: false);
+                    var frame = CanFrame.Fd(id, bytes, isExtendedFrame: isExtended, BRS: brs, ESI: false);
                     var n = Transmit?.Invoke(frame);
                     if (n <= 0)
                         MessageBox.Show(this, "Frame not sent (driver rejected or not ready).", "Send", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -144,7 +145,7 @@ namespace CanKitToolkit.Views
                             Array.Resize(ref bytes, dlc); // pad zeros
                         }
                     }
-                    var frame = new CanClassicFrame(id, bytes, isExtendedFrame: isExtended, isRemoteFrame: rtr);
+                    var frame = CanFrame.Classic(id, bytes, isExtendedFrame: isExtended, isRemoteFrame: rtr);
                     var n = Transmit?.Invoke(frame);
                     if (n <= 0)
                         MessageBox.Show(this, "Frame not sent (driver rejected or not ready).", "Send", MessageBoxButton.OK, MessageBoxImage.Information);

@@ -1,3 +1,4 @@
+using CanKit.Abstractions.API.Can.Definitions;
 using CanKit.Core.Definitions;
 
 namespace CanKitToolkit.Models
@@ -121,17 +122,17 @@ namespace CanKitToolkit.Models
         public string FlagsDisplay => IsFd ? (Brs ? "BRS" : string.Empty) : (IsRemote ? "RTR" : string.Empty);
         public string DataDisplay => DataBytes is { Length: > 0 } ? string.Join(" ", DataBytes.Select(b => b.ToString("X2"))) : string.Empty;
 
-        public (ICanFrame frame, TimeSpan period) ToSchedule()
+        public (CanFrame frame, TimeSpan period) ToSchedule()
         {
             var period = TimeSpan.FromMilliseconds(Math.Max(1, PeriodMs));
             if (IsFd)
             {
-                var fd = new CanFdFrame(Id, DataBytes, BRS: Brs, ESI: false, isExtendedFrame: IsExtended);
+                var fd = CanFrame.Fd(Id, DataBytes, BRS: Brs, ESI: false, isExtendedFrame: IsExtended);
                 return (fd, period);
             }
             else
             {
-                var classic = new CanClassicFrame(Id, DataBytes, isExtendedFrame: IsExtended, isRemoteFrame: IsRemote);
+                var classic = CanFrame.Classic(Id, DataBytes, isExtendedFrame: IsExtended, isRemoteFrame: IsRemote);
                 return (classic, period);
             }
         }

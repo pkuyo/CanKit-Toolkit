@@ -1,3 +1,4 @@
+using CanKit.Abstractions.API.Common.Definitions;
 using CanKit.Core;
 using CanKit.Core.Definitions;
 using CanKitToolkit.Models;

@@ -19,12 +19,12 @@
 
 
   <ItemGroup>
-	<PackageReference Include="CanKit.Adapter.ControlCAN" Version="0.4.0" />
-	<PackageReference Include="CanKit.Adapter.Kvaser" Version="0.4.0" />
-	<PackageReference Include="CanKit.Adapter.PCAN" Version="0.4.0" />
-	<PackageReference Include="CanKit.Adapter.Vector" Version="0.4.0" />
-	<PackageReference Include="CanKit.Adapter.ZLG" Version="0.4.0" />
-	<PackageReference Include="CanKit.Core" Version="0.4.0" />
+	<PackageReference Include="CanKit.Adapter.ControlCAN" Version="0.5.2" />
+	<PackageReference Include="CanKit.Adapter.Kvaser" Version="0.5.2" />
+	<PackageReference Include="CanKit.Adapter.PCAN" Version="0.5.2" />
+	<PackageReference Include="CanKit.Adapter.Vector" Version="0.5.2" />
+	<PackageReference Include="CanKit.Adapter.ZLG" Version="0.5.2" />
+	<PackageReference Include="CanKit.Core" Version="0.5.2" />
     <PackageReference Include="MaterialDesignInXamlToolkitAddOns" Version="0.0.63" />
   </ItemGroup>
 

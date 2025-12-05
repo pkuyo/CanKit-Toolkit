@@ -1,5 +1,8 @@
+using CanKit.Abstractions.API.Can;
+using CanKit.Abstractions.API.Can.Definitions;
+using CanKit.Abstractions.API.Common;
+using CanKit.Abstractions.API.Common.Definitions;
 using CanKit.Core;
-using CanKit.Core.Abstractions;
 using CanKit.Core.Definitions;
 using CanKitToolkit.Models;
 
@@ -69,11 +72,13 @@ namespace CanKitToolkit.Services
                 {
                     cfg.EnableErrorInfo();
                 }
-
+                /*
                 if ((features & CanFeature.BusUsage) != 0)
                 {
                     cfg.BusUsage(countersPollMs);
                 }
+                */
+
             });
             _bus = bus;
             _onMessage = onMessage;
@@ -163,7 +168,7 @@ namespace CanKitToolkit.Services
             }
         }
 
-        public int Transmit(ICanFrame frame)
+        public int Transmit(CanFrame frame)
         {
             var bus = _bus;
             if (bus == null)
@@ -194,7 +199,7 @@ namespace CanKitToolkit.Services
             catch { }
         }
 
-        public void StartPeriodic(IEnumerable<(ICanFrame frame, TimeSpan period)> items)
+        public void StartPeriodic(IEnumerable<(CanFrame frame, TimeSpan period)> items)
         {
             var bus = _bus ?? throw new InvalidOperationException("Bus not opened.");
             StopPeriodic();
